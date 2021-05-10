@@ -10,23 +10,24 @@ package userregistration;
 
 
 	    /**
-	     * added check last name method according to pattern.
+	     * checkEmail method to match the email Id'S according to the pattern.
 	     */
-	    public void checkLastName() {
-	        System.out.println("Enter Last-name starts with capital letter and has minimum 3 characters : ");
-	        lastName = SCANNER.nextLine();
-	        check = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
+	    public void checkEmail() {
+	        System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
+	        email = SCANNER.nextLine();
+	        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
 	        if (!check) {
-	            System.out.println("Invalid!!Please Enter your name valic lastname.");
-	            checkLastName();
+	            System.out.println(" Invalid!!Email-ID ! please Enter a Valid input. ");
+	            checkEmail();
 	        }
-	        else
-	            System.out.println(" Done !It's  valid Lastname ");
+	        else {
+	            System.out.println(" Email-Id is valid ");
+	        }
 	    }
 	
 	
 	 public static void main(String[]args) {
 	        UserRegistration user = new UserRegistration();
-	        user.checkLastName();
+	        user.checkEmail();
 	 }
 }
