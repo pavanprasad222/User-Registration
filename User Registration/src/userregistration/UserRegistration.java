@@ -69,6 +69,12 @@ package userregistration;
 	        else {
 	            System.out.println("Done ! Valid Number ");
 	        }
+		    public static void main(String[]args) {
+        UserRegistration user = new UserRegistration();
+        user.checkFirstName();
+        user.checkLastName();
+        user.checkEmail();
+        user.checkPhoneNumber();
 	    }
 	}
 
