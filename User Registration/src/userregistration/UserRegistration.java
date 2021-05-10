@@ -7,28 +7,26 @@ package userregistration;
 	    private boolean check;
 	    private String firstName,lastName,email,phoneNumber,password;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
-	/**
-	 *checking first name according to pattern.
-	 * for this operation i have imported regex module and Scanner module.
-	 */
-	    public void checkFirstName() {
-	        System.out.println("Enter First-name starts with capital letter and has minimum 3 characters : ");
-	        firstName = SCANNER.nextLine();
-	        check = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(firstName).matches();
+
+
+	    /**
+	     * added check last name method according to pattern.
+	     */
+	    public void checkLastName() {
+	        System.out.println("Enter Last-name starts with capital letter and has minimum 3 characters : ");
+	        lastName = SCANNER.nextLine();
+	        check = Pattern.compile("[A-Z]{1}[a-z]{2,}").matcher(lastName).matches();
 	        if (!check) {
-	            System.out.println("Invalid! !Please Enter your valid firstname .");
-	            checkFirstName();
+	            System.out.println("Invalid!!Please Enter your name valic lastname.");
+	            checkLastName();
 	        }
-	        else {
-	            System.out.println(" Done ! It's  Valid Firstname ");
-	        }
+	        else
+	            System.out.println(" Done !It's  valid Lastname ");
 	    }
-
-    public static void main(String[]args) {
-	            UserRegistration user = new UserRegistration();
-	            user.checkFirstName();
-	     
-	    }
-	}
-
-	  
+	
+	
+	 public static void main(String[]args) {
+	        UserRegistration user = new UserRegistration();
+	        user.checkLastName();
+	 }
+}
