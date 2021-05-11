@@ -13,7 +13,7 @@ package userregistration;
      * Added checkEmail method to match the email ids according to the given pattern.
      */
     public void checkEmail() {
-        System.out.println("Enter a valid email(Eg. abc.xyz@bl.co.in) : ");
+        System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
         email = SCANNER.nextLine();
         check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
         if (!check) {
