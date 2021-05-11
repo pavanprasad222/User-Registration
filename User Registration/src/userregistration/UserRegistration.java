@@ -5,28 +5,30 @@ package userregistration;
 	
 	public class UserRegistration {
 	    private boolean check;
-	    private String firstName,lastName,email,phoneNumber,password;
+	    private String password;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 
-
 	    /**
-	     * check mobile number
+	     * Password must contain of 8 characters.
+	     * Have a Special Character(eg-@$^)"
 	     */
-	    public void checkPhoneNumber() {
-	        System.out.println("Enter Your phoneNumber (Eg. +91 9919819801) : ");
-	        phoneNumber = SCANNER.nextLine();
-	        check = Pattern.compile("^[\0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
+	    public void checkPassword() {
+	        System.out.println("Enter Password(min 8 characters): ");
+	        System.out.println("*Have a Special Character(Eg-@$^)");
+	        password = SCANNER.nextLine();
+	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(password).matches();
 	        if (!check) {
-	            System.out.println(" Number is invalid! !Please Enter a Valid Number. ");
-	            checkPhoneNumber();
+	            System.out.println(" Invalid Password!! Enter a valid one. ");
+	            checkPassword();
 	        }
 	        else {
-	            System.out.println("Done ! Valid Number ");
+	            System.out.println("Done! Password is valid ");
 	        }
 	    }
+	   
 	
 	 public static void main(String[]args) {
 	        UserRegistration user = new UserRegistration();
-	        user.checkPhoneNumber();
+	        user.checkPassword();
 	 }
 }
