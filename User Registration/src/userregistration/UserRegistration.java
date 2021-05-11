@@ -5,7 +5,7 @@ package userregistration;
 	
 	public class UserRegistration {
 	    private boolean check;
-	    private String firstName,lastName,email,phoneNumber,password;
+	    private String phoneNumber;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 
 
