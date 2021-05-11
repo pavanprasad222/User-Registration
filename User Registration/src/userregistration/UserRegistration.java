@@ -10,24 +10,23 @@ package userregistration;
 
 
 	    /**
-	     * checkEmail method to match the email Id'S according to the pattern.
+	     * check mobile number
 	     */
-	    public void checkEmail() {
-	        System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
-	        email = SCANNER.nextLine();
-	        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
+	    public void checkPhoneNumber() {
+	        System.out.println("Enter Your phoneNumber (Eg. +91 9919819801) : ");
+	        phoneNumber = SCANNER.nextLine();
+	        check = Pattern.compile("^[\0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
 	        if (!check) {
-	            System.out.println(" Invalid!!Email-ID ! please Enter a Valid input. ");
-	            checkEmail();
+	            System.out.println(" Number is invalid! !Please Enter a Valid Number. ");
+	            checkPhoneNumber();
 	        }
 	        else {
-	            System.out.println(" Email-Id is valid ");
+	            System.out.println("Done ! Valid Number ");
 	        }
 	    }
 	
-	
 	 public static void main(String[]args) {
 	        UserRegistration user = new UserRegistration();
-	        user.checkEmail();
+	        user.checkPhoneNumber();
 	 }
 }
