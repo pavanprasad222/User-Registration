@@ -8,15 +8,12 @@ package userregistration;
 	    private String password;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 		
-		/**
-     * Password must be of 8 characters.
-     */
     public void checkPassword() {
         System.out.println("Enter Password(min 8 character): ");
         password = SCANNER.nextLine();
         check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
         if (!check) {
-            System.out.println(" Invalid Password!! Enter a valid one. ");
+            System.out.println(" Sorry! Wrong Input ");
             checkPassword();
         }
         else {
@@ -26,7 +23,9 @@ package userregistration;
 	   
 	
 	 public static void main(String[]args) {
+		 
 	        UserRegistration user = new UserRegistration();
+		 
 	        user.checkPassword();
 	 }
 }
