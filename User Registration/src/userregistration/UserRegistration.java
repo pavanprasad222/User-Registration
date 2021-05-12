@@ -33,7 +33,7 @@ package userregistration;
 	        else
 	            System.out.println(" Done !It's  valid Lastname ");
 	    }
-
+	}
 	   
 	    public void checkEmail() {
 	        System.out.println("Enter a valid email(Eg. abc.psr@bl.co.in) : ");
@@ -46,7 +46,8 @@ package userregistration;
 	        else {
 	            System.out.println(" Email-Id is valid ");
 		}
-		    
+	    }
+
 	    public void checkPhoneNumber() {
 	        System.out.println("Enter Your Mobile Number (Eg. +91 9919819801) : ");
 	        phoneNumber = SCANNER.nextLine();
@@ -58,7 +59,8 @@ package userregistration;
 	        else {
 	            System.out.println("Done ! Valid Number ");
 	        }
-		    
+	    }
+
 		    
 		      public void checkPassword() {
         System.out.println("Enter Password(min 8 character): ");
@@ -71,7 +73,22 @@ package userregistration;
         else {
             System.out.println(" Password is valid ");
         }
-   
+		      }
+
+	    public void checkPassword() {
+	        System.out.println("Enter Password(min 8 characters): ");
+	        System.out.println("*Have a Special Character(Eg-@$^)");
+	        password = SCANNER.nextLine();
+	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(password).matches();
+	        if (!check) {
+	            System.out.println(" Sorry! Wrong Input ");
+	            checkPassword();
+	        }
+	        else {
+	            System.out.println("Done! Password is valid ");
+	        }
+	    }
+
 			      
 		    public static void main(String[]args) {
         UserRegistration user = new UserRegistration();
