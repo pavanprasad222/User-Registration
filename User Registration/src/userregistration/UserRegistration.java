@@ -9,15 +9,12 @@ package userregistration;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 
 
-	 /**
-     * Added checkEmail method to match the email ids according to the given pattern.
-     */
     public void checkEmail() {
         System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
         email = SCANNER.nextLine();
         check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
         if (!check) {
-            System.out.println(" Invalid!!Email-id...Please Enter a Valid one. ");
+            System.out.println(" Sorry! Wrong Input ");
             checkEmail();
         }
         else {
@@ -26,7 +23,9 @@ package userregistration;
     }
 	
 	 public static void main(String[]args) {
+		 
 	        UserRegistration user = new UserRegistration();
+		 
 	        user.checkEmail();
 	 }
 }
