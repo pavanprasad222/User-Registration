@@ -5,7 +5,7 @@ package userregistration;
 	
 	public class UserRegistration {
 	    private boolean check;
-	    private String firstName,lastName,email,phoneNumber,password;
+	    private String firstName,lastName,email,phoneNumber,Password;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 	
 	    public void checkFirstName() {
@@ -20,22 +20,6 @@ package userregistration;
 	            System.out.println(" Done ! It's  Valid Firstname ");
 	        }
 	    }
-		
-		public void checkPassword() {
-	        System.out.println("Enter Password(min 8 characters): ");
-	        System.out.println("*Have a Special Character(Eg-@$^)");
-	        System.out.println("*Have a Number(0-9)");
-	        password = SCANNER.nextLine();
-	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]){8,}.*$").matcher(password).matches();
-	        if (!check) {
-	            System.out.println(" Sorry! Wrong Input ");
-	            checkPassword();
-	        }
-	        else {
-	            System.out.println(" Password is valid ");
-	        }
-	    }
-
 	 
 	    public void checkLastName() {
 	        System.out.println("Enter Last-name starts with capital letter and has minimum 3 characters : ");
@@ -48,7 +32,6 @@ package userregistration;
 	        else
 	            System.out.println(" Done !It's  valid Lastname ");
 	    }
-	}
 	   
 	    public void checkEmail() {
 	        System.out.println("Enter a valid email(Eg. abc.psr@bl.co.in) : ");
@@ -77,35 +60,35 @@ package userregistration;
 	    }
 
 		    
-		      public void checkPassword() {
+		      public void checkPassword1() {
         System.out.println("Enter Password(min 8 character): ");
-        password = SCANNER.nextLine();
-        check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
+        Password = SCANNER.nextLine();
+        check = Pattern.compile("^[a-z]{8,}$").matcher(Password).matches();
         if (!check) {
             System.out.println(" Sorry! Wrong Input ");
-            checkPassword();
+            checkPassword1();
         }
         else {
             System.out.println(" Password is valid ");
         }
 		      }
 
-	    public void checkPassword() {
+	    public void checkPassword2() {
 	        System.out.println("Enter Password(min 8 characters, Have a Special Character): ");
-	        password = SCANNER.nextLine();
-	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(password).matches();
+	        Password = SCANNER.nextLine();
+	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z]){8,}.*$").matcher(Password).matches();
 	        if (!check) {
 	            System.out.println(" Sorry! Wrong Input ");
-	            checkPassword();
+	            checkPassword2();
 	        }
 	        else {
 	            System.out.println("Done! Password is valid ");
 	        }
 	    }
-public void checkPassword() {
+         public void checkPassword() {
 	        System.out.println("Enter Password(min 8 characters, Have a Special Character, Have a Numerical): ");
-	        password = SCANNER.nextLine();
-	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]){8,}.*$").matcher(password).matches();
+	        Password = SCANNER.nextLine();
+	        check = Pattern.compile("^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9]){8,}.*$").matcher(Password).matches();
 	        if (!check) {
 	            System.out.println(" Sorry! Wrong Input ");
 	            checkPassword();
@@ -122,6 +105,8 @@ public void checkPassword() {
         user.checkLastName();
         user.checkEmail();
         user.checkPhoneNumber();
+        user.checkPassword1();
+        user.checkPassword2();
         user.checkPassword();
 	    }
 	}
