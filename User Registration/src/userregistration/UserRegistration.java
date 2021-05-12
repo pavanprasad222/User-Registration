@@ -5,16 +5,16 @@ package userregistration;
 	
 	public class UserRegistration {
 	    private boolean check;
-	    private String password;
+	    private String password1;
 	    private static final Scanner SCANNER  = new Scanner(System.in);
 		
-    public void checkPassword() {
+    public void checkPassword1() {
         System.out.println("Enter Password(min 8 character): ");
         password = SCANNER.nextLine();
         check = Pattern.compile("^[a-z]{8,}$").matcher(password).matches();
         if (!check) {
             System.out.println(" Sorry! Wrong Input ");
-            checkPassword();
+            checkPassword1();
         }
         else {
             System.out.println(" Password is valid ");
@@ -26,6 +26,6 @@ package userregistration;
 		 
 	        UserRegistration user = new UserRegistration();
 		 
-	        user.checkPassword();
+	        user.checkPassword1();
 	 }
 }
