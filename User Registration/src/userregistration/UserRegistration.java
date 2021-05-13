@@ -11,7 +11,7 @@ package userregistration;
 
 	  
 	    public void checkPhoneNumber() {
-	        System.out.println("Enter Your phoneNumber (Eg. +91 9919819801) : ");
+	        System.out.println("Enter Your phoneNumber (Eg. +91 8074222312) : ");
 	        phoneNumber = SCANNER.nextLine();
 	        check = Pattern.compile("^[\0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
 	        if (!check) {
