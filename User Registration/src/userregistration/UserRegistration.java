@@ -12,7 +12,7 @@ package userregistration;
     public void checkEmail() {
         System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
         email = SCANNER.nextLine();
-        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
+        check = Pattern.compile("^[A-Za-z0-9]+(?:\\+*-*.[A-Za-z0-9]+)*@[A-Za-z0-9]+(?:\\.[A-Za-z0-9]{2,}+)*$").matcher(email).matches();
         if (!check) {
             System.out.println(" Sorry! Wrong Input ");
             checkEmail();
