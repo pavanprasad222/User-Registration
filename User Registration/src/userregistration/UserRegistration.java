@@ -34,9 +34,9 @@ package userregistration;
 	    }
 	   
 	    public void checkEmail() {
-	        System.out.println("Enter a valid email(Eg. abc.psr@bl.co.in) : ");
+	        System.out.println("Enter a valid email(Eg. abc.psr@22.co.in) : ");
 	        email = SCANNER.nextLine();
-	        check = Pattern.compile("^[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(?:\\.[a-zA-Z0-9]{2,}+)*$").matcher(email).matches();
+	        check = Pattern.compile("^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-ZA0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z] {2,7}$").matcher(email).matches();
 	        if (!check) {
 	            System.out.println("Sorry ! Wrong Input ");
 	            checkEmail();
@@ -47,7 +47,7 @@ package userregistration;
 	    }
 
 	    public void checkPhoneNumber() {
-	        System.out.println("Enter Your Mobile Number (Eg. +91 9919819801) : ");
+	        System.out.println("Enter Your Mobile Number (Eg. +91 8074222312) : ");
 	        phoneNumber = SCANNER.nextLine();
 	        check = Pattern.compile("^[\0-9]{1,3} [0-9]{10}$").matcher(phoneNumber).matches();
 	        if (!check) {
@@ -105,8 +105,6 @@ package userregistration;
         user.checkLastName();
         user.checkEmail();
         user.checkPhoneNumber();
-        user.checkPassword1();
-        user.checkPassword2();
         user.checkPassword();
 	    }
 	}
